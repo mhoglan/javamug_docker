@@ -1,411 +1,211 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
 	<head>
-		<meta charset="utf-8">
-
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
-
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>TUNE Template: Slides</title>
+		<meta name="description" content="Slides">
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
 
-		<!-- Code syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
-	</head>
-
-	<body>
-
-		<div class="reveal">
-
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
-				</section>
-
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
-
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
-
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
+		<!-- User CSS -->
+		<style id="user-css-output" type="text/css">
+			.reveal li {
+  list-style: none;
+  font-size: 25px;
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+.reveal li:before {
+  content: "· ";
+  font-size: 40px;
+  vertical-align: middle;
+  line-height: 40px;
+}
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+		</style>
+	</head>
+	<body class="reveal-viewport theme-font-opensans theme-color-white-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section class="stack"><section data-background-size="cover" data-id="512fea5e3a0263d48ee4b53376c91631" data-background-image="tune-template/1475173-title_background.png"><div class="sl-block" data-block-type="text" data-block-id="dc1e1c2b6827d4d254c79cff75b9c8f6" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 0px; top: 68px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(85, 97, 111); text-align: right;" dir="ui">
+<p><span style="font-size:56px">Presentation Title</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 0px; top: 140px;" data-block-id="1a2905c448a077364bc99ea089954fbc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(85, 97, 111); text-align: right;" dir="ui">
+<p><span style="font-size:24px">Subtitle</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7f32db4b9fbe4d596475b438994562ea" style="min-width: 30px; min-height: 30px; width: 271.25px; height: 70px; left: 608.75px; top: 560px;"><div class="sl-block-content" style="z-index: 13; border-width: 3px;"><img data-natural-width="310" data-natural-height="80" style="" data-src="tune-template/1475402-tune_logo.png"></div></div></section><section><div class="sl-block" data-block-type="image" data-block-id="3c534ae0c20bc208aab19433ffc863a4" style="min-width: 30px; min-height: 30px; width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="3436cba35bfbc158966cc3df7c27b1bb" style="min-width: 4px; min-height: 4px; width: 800px; height: 4px; left: 80px; top: 66px;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a33a3876fd9735fbf0b6a1f4295b7e53" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 8px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Who we are and how we got here</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 732px; left: 115px; top: 101px;" data-block-id="aa47494eb581b8122621fc9623f652f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Launched MobileAppTracking in 2011 to solve attribution for mobile app marketers with unbiased technology.</span></p>
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+<ul>
+	<li><span style="font-size:20px">250+ Employees</span></li>
+	<li><span style="font-size:20px">Working with the top grossing apps on iOS and Android</span></li>
+	<li><span style="font-size:20px">Over <strong>3 Billion attributions</strong> tracked every month.</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="70cd8da51dd685692347fdb7d17274d8" style="min-width: 30px; min-height: 30px; width: 957.333333333333px; height: 718px; left: 3px; top: -9px;"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="1200" data-natural-height="900" data-src="tune-template/1475222-tune_timeline.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="194f740dc7d27ce83b5615026a75ebda"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="af95fd53c04a5a28bd46c92563ef9e62"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="eaba8c020cdd013b430bd450d8ea3a46"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">A few clients already using TUNE</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="43b1feacf2edba7a398088fd5b506e84" style="min-width: 30px; min-height: 30px; width: 703px; height: 425.876959247649px; left: 181px; top: 146.561520376176px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1276" data-natural-height="773" style="" data-src="tune-template/1475441-brands_using_tune_2.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="d0d62eeab8fdd4b71b0684f2e6334a33" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 171px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Brands</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 331px;" data-block-id="a52a0b930cf50466777f1dd568205b31"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Mobile</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 490px;" data-block-id="0a8af9f07638a7d0b3aeeba3e770aabe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Gaming</em></span></p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="ccf4e120198696d5ddfb19a1a9959221"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="72b5fe51f4cebcad5ca4ba802924ebd2"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="a3de5b5b47387eb730e7989d80b4b6c5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Product: MobileAppTracking (MAT)</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="a3a4aedc60484c15993b44e3b5bf5cc0" style="min-width: 30px; min-height: 30px; width: 780.33770014556px; height: 446px; left: 90px; top: 197px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1202" data-natural-height="687" data-src="tune-template/1475454-mat_screenshot.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="55f1038991d129aedceae9cfd41b865d" style="min-width: 30px; min-height: 30px; width: 315.765363128492px; height: 118px; left: 322.117318435754px; top: 79px;"><div class="sl-block-content" style="z-index: 0;"><img data-natural-width="479" data-natural-height="179" style="" data-src="tune-template/1475455-tune_mat_logo.png"></div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="tune-template/1475479-background-1.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="4594ff2eccec8cab622ecaa2d45849e9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Transition Slide Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="38274d64e59a8673ca2e20af00cfdbea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span style="font-size:32px">transition slide summary </span></p>
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							<tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							<tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							<tr>
-						</tbody>
-					</table>
-				</section>
+<p><span style="font-size:32px; line-height:41.5999984741211px">description of stuff</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="a9975618575e991436a2274f9d8dadfc" style="min-width: 30px; min-height: 30px; width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="be687790b8531f08b60da0ecd6bd2b06"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="75be572570455f5a09470cbe82ec7ca7"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="dae06705f8330c84d0286f6e574f57d6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 732px; left: 115px; top: 101px;" data-block-id="2f60b0d4d39a75b84469ab45fd0fa974"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Body Content</span></p>
 
-				<section>
-					<h2>Clever Quotes</h2>
-					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
+<ul>
+	<li><span style="font-size:20px">Bullet 1</span></li>
+	<li><span style="font-size:20px">Bullet 2</span></li>
+	<li><span style="font-size:20px">Bullet 3</span></li>
+</ul>
+</div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="tune-template/1475482-background-2.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="c4e99a3f00af428e988f31744b0b98a9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Transition Slide Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="4afdd461c0a3dc232110a2f0b32fb6aa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span style="font-size:32px">transition slide summary </span></p>
 
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
+<p><span style="font-size:32px; line-height:41.5999984741211px">description of stuff</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="3bee762cce9069271c60fbcac7ba9b1d"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="8a568b8366c189bd00da64db52091e23"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7296a19ba402a579ef27ef1cc861fc2c"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="e47dac90a9b44cab557387e60afab506"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 732px; left: 115px; top: 101px;" data-block-id="24672501994fd5d11f4b6169f14699e0"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Body Content</span></p>
 
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
+<ul>
+	<li><span style="font-size:20px">Bullet 1</span></li>
+	<li><span style="font-size:20px">Bullet 2</span></li>
+	<li><span style="font-size:20px">Bullet 3</span></li>
+</ul>
+</div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="tune-template/1475485-background-3.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="2b1e02648e33c278fc40931e2415c5b6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Transition Slide Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="0a89a5be393d6a6a9bfbfb77437e512f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span style="font-size:32px">transition slide summary </span></p>
 
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
+<p><span style="font-size:32px; line-height:41.5999984741211px">description of stuff</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="2dad392184d5826e8ac8c0ec811c8a9e"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="9735b12c35aa73c112fc90407314d676"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="d7b89aee5e7b16167bcb983cd2469a60"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="921014bead09ad265bfdbf72e4f22b79"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 732px; left: 115px; top: 101px;" data-block-id="9f64afbe10f208d0c9e1e27bb21b6abe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Body Content</span></p>
 
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
+<ul>
+	<li><span style="font-size:20px">Bullet 1</span></li>
+	<li><span style="font-size:20px">Bullet 2</span></li>
+	<li><span style="font-size:20px">Bullet 3</span></li>
+</ul>
+</div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="tune-template/1475487-background-4.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="ef5768fde8f1edfa6db0a29cfc7cd1c4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Transition Slide Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="a4833e09e3f50885306a3db5c9d1acbc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span style="font-size:32px">transition slide summary </span></p>
 
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
+<p><span style="font-size:32px; line-height:41.5999984741211px">description of stuff</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="6e8bd9063f89cf95156d880239574b85"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="78c98ae610663e985c76981b66b26e4e"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="tune-template/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="6ae3c17985b5701cdb157857a51ca01e"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="4c38c0795a1ad9d0e408cc6d79ecc0b7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Header</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 732px; left: 115px; top: 101px;" data-block-id="f89df8ea5f22179f37b192c9f8d5fdd7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Body Content</span></p>
 
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
-					</p>
-				</section>
-
+<ul>
+	<li><span style="font-size:20px">Bullet 1</span></li>
+	<li><span style="font-size:20px">Bullet 2</span></li>
+	<li><span style="font-size:20px">Bullet 3</span></li>
+</ul>
+</div></div></section></section>
 			</div>
-
 		</div>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
-
 		<script>
+			var SLConfig = {"deck": {"id":435191,"slug":"tune-template","title":"TUNE Template","description":"TUNE Template","visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/43871c/decks.jpg","view_count":0,"user":{"id":160726,"username":"mhoglan","name":"Michael Hoglan","description":"","thumbnail_url":"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":172308,"present_controls":true,"present_upsizing":true},"registered":true},"background_transition":"fade","transition":"none","theme_id":null,"theme_font":"opensans","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"rtl":false,"version":2,"notes":{}}};
+			SLConfig.current_user = {
+				name: "Michael Hoglan",
+				username: "mhoglan",
+				pro: true
+			};
+		</script>
 
-			// Full list of configuration options available at:
-			// https://github.com/hakimel/reveal.js#configuration
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
 			Reveal.initialize({
 				controls: true,
 				progress: true,
 				history: true,
-				center: true,
+				mouseWheel: false,
 
-				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
 
-				// Optional reveal.js plugins
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true },
-					{ src: 'plugin/notes/notes.js', async: true }
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
 			});
 
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
 		</script>
+
+		
 
 	</body>
 </html>
