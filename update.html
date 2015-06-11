@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+	<html class="sl-root base export loaded">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Java MUG - Docker Presentation: Slides</title>
+		<meta name="description" content="Slides">
+
+		<link rel="stylesheet" type="text/css" href="lib/offline-v2.css">
+
+		<!-- User CSS -->
+		<style id="user-css-output" type="text/css">
+			.reveal li {
+  list-style: none;
+  font-size: 25px;
+}
+.reveal li:before {
+  content: "· ";
+  font-size: 40px;
+  vertical-align: middle;
+  line-height: 40px;
+}
+
+		</style>
+	</head>
+	<body class="reveal-viewport theme-font-opensans theme-color-white-blue">
+		<div class="reveal">
+			<div class="slides">
+				<section class="stack"><section data-background-size="cover" data-id="512fea5e3a0263d48ee4b53376c91631" data-background-image="javamug-docker/1475173-title_background.png">
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 0px; top: 140px;" data-block-id="1a2905c448a077364bc99ea089954fbc"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(85, 97, 111); text-align: right;" dir="ui">
+<p><span style="font-size:20px">Michael Hoglan</span></p>
+
+<p><span style="font-size:20px">michaelh@tune.com</span></p>
+
+<p><span style="font-size:20px"><span style="color:rgb(85, 97, 111)">@mhoglan</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="7f32db4b9fbe4d596475b438994562ea" style="min-width: 30px; min-height: 30px; width: 271.25px; height: 70px; left: 608.75px; top: 560px;"><div class="sl-block-content" style="z-index: 13; border-width: 3px;"><img data-natural-width="310" data-natural-height="80" style="" data-src="javamug-docker/1475402-tune_logo.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 640px; left: 0px; top: 70px;" data-block-id="2c58f26fded019e437ef695fc829ed9f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(85, 97, 111); text-align: right;" dir="ui">
+<p><span style="font-size:56px">Navigating Docker</span></p>
+</div></div></section><section><div class="sl-block" data-block-type="image" data-block-id="3c534ae0c20bc208aab19433ffc863a4" style="min-width: 30px; min-height: 30px; width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" data-block-id="3436cba35bfbc158966cc3df7c27b1bb" style="min-width: 4px; min-height: 4px; width: 800px; height: 4px; left: 80px; top: 66px;"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="a33a3876fd9735fbf0b6a1f4295b7e53" style="height: auto; min-width: 30px; min-height: 30px; width: 800px; left: 80px; top: 8px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Who we are and how we got here</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 732px; left: 115px; top: 101px;" data-block-id="aa47494eb581b8122621fc9623f652f1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:20px">Launched MobileAppTracking in 2011 to solve attribution for mobile app marketers with unbiased technology.</span></p>
+
+<ul>
+	<li><span style="font-size:20px">250+ Employees</span></li>
+	<li><span style="font-size:20px">Working with the top grossing apps on iOS and Android</span></li>
+	<li><span style="font-size:20px">Over <strong>3 Billion attributions</strong> tracked every month.</span></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="70cd8da51dd685692347fdb7d17274d8" style="min-width: 30px; min-height: 30px; width: 957.333333333333px; height: 718px; left: 3px; top: -9px;"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="1200" data-natural-height="900" data-src="javamug-docker/1475222-tune_timeline.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="194f740dc7d27ce83b5615026a75ebda"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="af95fd53c04a5a28bd46c92563ef9e62"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="eaba8c020cdd013b430bd450d8ea3a46"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">A few clients already using TUNE</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="43b1feacf2edba7a398088fd5b506e84" style="min-width: 30px; min-height: 30px; width: 703px; height: 425.876959247649px; left: 181px; top: 146.561520376176px;"><div class="sl-block-content" style="z-index: 13;"><img data-natural-width="1276" data-natural-height="773" style="" data-src="javamug-docker/1475441-brands_using_tune_2.png"></div></div>
+<div class="sl-block" data-block-type="text" data-block-id="d0d62eeab8fdd4b71b0684f2e6334a33" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 171px;"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Brands</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 331px;" data-block-id="a52a0b930cf50466777f1dd568205b31"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Mobile</em></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; width: 600px; left: 80px; top: 490px;" data-block-id="0a8af9f07638a7d0b3aeeba3e770aabe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(102, 102, 102);">
+<p style="text-align:left"><span style="font-size:20px"><em>Gaming</em></span></p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="ccf4e120198696d5ddfb19a1a9959221"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="72b5fe51f4cebcad5ca4ba802924ebd2"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="a3de5b5b47387eb730e7989d80b4b6c5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Product: MobileAppTracking (MAT)</span></p>
+</div></div>
+<div class="sl-block" data-block-type="image" data-block-id="a3a4aedc60484c15993b44e3b5bf5cc0" style="min-width: 30px; min-height: 30px; width: 780.33770014556px; height: 446px; left: 90px; top: 197px;"><div class="sl-block-content" style="z-index: 13;"><img style="" data-natural-width="1202" data-natural-height="687" data-src="javamug-docker/1475454-mat_screenshot.png"></div></div>
+<div class="sl-block" data-block-type="image" data-block-id="55f1038991d129aedceae9cfd41b865d" style="min-width: 30px; min-height: 30px; width: 315.765363128492px; height: 118px; left: 322.117318435754px; top: 79px;"><div class="sl-block-content" style="z-index: 0;"><img data-natural-width="479" data-natural-height="179" style="" data-src="javamug-docker/1475455-tune_mat_logo.png"></div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="javamug-docker/1475479-background-1.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="4594ff2eccec8cab622ecaa2d45849e9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">The Beginning of the End</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="38274d64e59a8673ca2e20af00cfdbea"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p>Where did this all come from and what is the big deal?  <br>
+ </p>
+</div></div>
+</section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="756fde4bdc91b03cc4de345212683047"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7e1eb174c8cfd335a5bcf1d435451083"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="298443c23297ea1316f93f9bba6cf7d2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><font size="7"><span style="line-height:62px">Docker</span></font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 303px;" data-block-id="883d1b86f037ce61884027b1b6d6ffae"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>Docker has become one of the fastest growing and adopted open source projects ever.</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://www.businessinsider.com/docker-why-it-took-off-2015-3" target="_blank">http://www.businessinsider.com/docker-why-it-took-off-2015-3</a></span></li>
+	<li><a href="http://blogs.wsj.com/cio/2015/06/02/docker-is-changing-the-way-big-companies-develop-apps-ceo-says/" target="_blank"><span style="font-size:16px">http://blogs.wsj.com/cio/2015/06/02/docker-is-changing-the-way-big-companies-develop-apps-ceo-says/</span></a></li>
+</ul>
+
+<p>Valued at over $1B with latest round of $95M of funding.</p>
+
+<ul>
+	<li><a href="http://www.businessinsider.com/docker-raises-95-million-to-fight-coreos-and-google-2015-4" target="_blank"><span style="font-size:16px">http://www.businessinsider.com/docker-raises-95-million-to-fight-coreos-and-google-2015-4</span></a></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 360px; left: 480px; top: 198px;" data-block-id="5d817a6f615db876783b7a4888c758b7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 15; color: rgb(102, 102, 102); text-align: left;">
+<p><a href="https://www.docker.com/" target="_blank">https://www.docker.com/</a></p>
+
+<p><a href="https://docs.docker.com/" target="_blank">https://docs.docker.com/​</a></p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="width: 360px; height: 123.75px; left: 80px; top: 179px;" data-block-id="f0e07fe086c247a8db04d7d4168a2bbf"><div class="sl-block-content" style="z-index: 16;"><img style="" data-natural-width="1600" data-natural-height="550" data-src="javamug-docker/1475580-large_h-trans.png"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 103px;" data-block-id="05c1b4989095e7caca38dbb365b36f13"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(102, 102, 102); text-align: left;">
+<p>Open source platform for building, shipping and running applications in containers.</p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="697b484542c5268e70e8a1a7639df086"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="f4085bdcb3d73ae24431016b846dcd8d"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="bae587e949f49f6b724a4014c66f128e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span><span style="font-size:48px">DevOps</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 103px;" data-block-id="e66613a9e3d608244057497cc8d498fb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Alongside the rise of Docker and other container technologies, the push towards DevOps has also been occurring.</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://www.forbes.com/sites/benkepes/2015/03/04/new-stats-from-the-state-of-cloud-report/" target="_blank">http://www.forbes.com/sites/benkepes/2015/03/04/new-stats-from-the-state-of-cloud-report/​</a></span></li>
+	<li>DevOps adoption at 66%, 71% at enterprises</li>
+	<li>Docker usage at 13% with 35% of companies planning to use</li>
+</ul>
+
+<p> </p>
+
+<p>Combining the tactics of DevOps with the usage of infrastructure technologies such as Docker and Ansible, development is being further enabled to support goals such as Continuous Integration and Continuous Deployment</p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="60f15e36f91332c92435b46d34b92f3b"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="24535d1e84d4c6353bd8f26a73e43ab1"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="6f56bb10d1ea7fceb9967a9744598e98"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span><span style="font-size:48px">Containers</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 103px;" data-block-id="18fcb11eb5252976ab9556383183c7a5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 17; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Containers are made possible due to the cgroups and namespaces work by Google that started in 2006</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://www.google.com/events/io/io14videos/4ec51a83-4acb-e311-b297-00155d5066d7" target="_blank">https://www.google.com/events/io/io14videos/4ec51a83-4acb-e311-b297-00155d5066d7​</a></span></li>
+</ul>
+
+<p>Everything at Google runs in a container.  Over 2 billion containers launched a week in 2014.  </p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://www.theregister.co.uk/2014/05/23/google_containerization_two_billion/" target="_blank">http://www.theregister.co.uk/2014/05/23/google_containerization_two_billion</a></span></li>
+	<li><span style="font-size:16px"><a href="http://www.slideshare.net/vmarmol/containers-google" target="_blank">http://www.slideshare.net/vmarmol/containers-google</a></span></li>
+</ul>
+
+<p>Four major goals of containers </p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)">Isolation</li>
+	<li style="color:rgb(102, 102, 102)">Predictability</li>
+	<li style="color:rgb(102, 102, 102)">Quality of Service</li>
+	<li style="color:rgb(102, 102, 102)">Overcommitment</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="2bfe813d6cd109b4e4a69d452836e27d"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="9b609a3caf9bc84673e1d8d66a266581"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="1cd6f6c6df15d9e9034a8127f7e71992"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span><span style="font-size:48px">Containers</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 520px;" data-block-id="69d802ff228696b1016aceea8886a809"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Containers start up in a fraction of the time compared to a VM</p>
+
+<ul>
+	<li>Typically &lt; 50ms for containers compared to 30s for VMs</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 543.593220338983px; height: 304px; left: 208px; top: 210px;" data-block-id="a6fe92b5799827b8c37e7b26faf5b064"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="633" data-natural-height="354" data-src="javamug-docker/1475693-docker_vm.jpg"></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 103px;" data-block-id="c54c474bcbd6c9b6ca4c70141ff47eb1"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Containers eliminate overhead incurred by VMs</p>
+
+<ul>
+	<li><a href="http://diginomica.com/2014/07/02/virtualization-dead-long-live-containerization/" target="_blank"><span style="font-size:16px">http://diginomica.com/2014/07/02/virtualization-dead-long-live-containerization/</span></a></li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="f2f1b9eba7a53f4bfabd554e38d06c13"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="bf4797bbc0f0a334844db2c7aec5e145"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="d871fa68555ff7017162d3de13d074e4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span><span style="font-size:48px">Filesystems</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="556dca4aaa0306ecd46e5827e9d5875d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Docker utilizes union file systems ​</p>
+
+<ul>
+	<li>AUFS</li>
+	<li>btrfs</li>
+	<li>vfs</li>
+	<li>DeviceMapper</li>
+	<li>OverlayFS</li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Understanding the impacts of these file system choices </p>
+
+<ul style="color:rgb(102, 102, 102)">
+	<li><span style="font-size:16px"><a href="https://docs.docker.com/introduction/understanding-docker/" target="_blank">https://docs.docker.com/introduction/understanding-docker/</a></span></li>
+	<li><span style="font-size:16px"><a href="http://developerblog.redhat.com/2014/09/30/overview-storage-scalability-docker/" target="_blank">http://developerblog.redhat.com/2014/09/30/overview-storage-scalability-docker/​<span style="font-size:16px"><span style="font-size:16px">​</span></span></a></span></li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Distros utilize different file systems by default, usually dictated by kernel levels</p>
+
+<ul style="color:rgb(102, 102, 102)">
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="2c4270e1d989910e2419f25fc7f8bab1"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="479d09851bc916f5d079c81fe2a35211"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="49c7ae4c16a29f67bf140a7624c5ba2e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span><span style="font-size:48px">Caveats</span></span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="2f8c336454836ce6595b3ec9d2b98aa4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Growing technology and the landscape is constantly changing</p>
+
+<ul style="color:rgb(102, 102, 102)">
+	<li>Competition is heating up such as CoreOS working on App Container and Rocket engine</li>
+	<li>Higher level services needed for orchestration and scheduling</li>
+</ul>
+
+<p>Security concerns as Docker daemon runs as root and binds system from host</p>
+
+<ul>
+	<li>Supposedly one of the reasons Rocket from CoreOS was started</li>
+</ul>
+
+<p>Need to be working on later versions of the kernel and libs</p>
+
+<ul>
+	<li>OverlayFS was merged into mainline with 3.18</li>
+	<li>btrfs stable was introduced with 3.10</li>
+</ul>
+</div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="javamug-docker/1475482-background-2.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="c4e99a3f00af428e988f31744b0b98a9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Docker</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="4afdd461c0a3dc232110a2f0b32fb6aa"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span style="color:rgb(21, 126, 251)">"</span><span style="color:rgb(21, 126, 251)">Develop, Ship and Run Any Application, Anywhere"</span></p>
+
+<p><span style="color:rgb(21, 126, 251)">Components, Concepts and Usage</span></p>
+</div></div>
+</section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="8a568b8366c189bd00da64db52091e23"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7296a19ba402a579ef27ef1cc861fc2c"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="e47dac90a9b44cab557387e60afab506"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Docker Components</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="1d9f93675689a138ac44f296958cbcfb"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Client </p>
+
+<ul>
+	<li>Binary used to interact with server whether it is local or remote</li>
+</ul>
+
+<p>Server</p>
+
+<ul>
+	<li>Daemon running which builds and runs containers </li>
+</ul>
+
+<p>Image</p>
+
+<ul>
+	<li>Filesystem which is the template for a container to start from</li>
+	<li>Uses layers (union file system)</li>
+</ul>
+
+<p>Container</p>
+
+<ul>
+	<li>Isolated running instance of image</li>
+</ul>
+
+<p>Registry</p>
+
+<ul>
+	<li>Storage of images, whether public or private</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="e30eb3a9419b614830d8c01b28cddda6"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="e7e0048678ebf913f667d01f9f92304e"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="0e71d01a8921f52f85332a71b0daf063"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Dockerfile</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="06315f670ad23805d7fc1b81bc7b976c"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>The instructions for how to build an image</p>
+
+<ul>
+	<li><a href="https://docs.docker.com/reference/builder/" target="_blank"><span style="font-size:16px">https://docs.docker.com/reference/builder/</span></a></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 400px; left: 80px; top: 187px;" data-block-id="b0043ee7e0bf8afb05f87bf6127b2fc2"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<ul>
+	<li>​FROM</li>
+	<li>MAINTAINER</li>
+	<li>RUN</li>
+	<li>CMD</li>
+	<li>LABEL</li>
+	<li>EXPOSE</li>
+	<li>ENV</li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 480px; top: 187px;" data-block-id="9f34763e4e3e229903fdca734f1bfbb8"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 16; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<ul>
+	<li>ADD</li>
+	<li>COPY</li>
+	<li>ENTRYPOINT</li>
+	<li>VOLUME</li>
+	<li>USER</li>
+	<li>WORKDIR</li>
+	<li>ONBUILD</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="dbd424364d68095597b61d8b595731ec"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="47dce86429ec83d25ca763a380ac3940"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="55b4f541e3337aa195581eb704c7125b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Dockerfile</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="145e5e73309a7fdeb2b0ad8cacc45444"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Java Docker image</p>
+
+<ul>
+	<li><a href="http://dockerfile.github.io/#/java" target="_blank"><span style="font-size:16px">http://dockerfile.github.io/#/java</span></a></li>
+</ul>
+</div></div>
+<div class="sl-block" data-block-type="code" style="width: 800px; height: 442px; left: 80px; top: 198px;" data-block-id="dea9ea24ae66e557997674396c9dffff"><div class="sl-block-content" style="z-index: 15; font-size: 90%;"><pre class="bash"><code>#
+# OpenJDK Java 7 JRE Dockerfile
+#
+# https://github.com/dockerfile/java
+# https://github.com/dockerfile/java/tree/master/openjdk-7-jre
+#
+
+# Pull base image.
+FROM dockerfile/ubuntu
+
+# Install Java.
+RUN \
+  apt-get update &amp;&amp; \
+  apt-get install -y openjdk-7-jre &amp;&amp; \
+  rm -rf /var/lib/apt/lists/*
+
+# Define working directory.
+WORKDIR /data
+
+# Define commonly used JAVA_HOME variable
+ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
+
+# Define default command.
+CMD ["bash"]</code></pre></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="e1677d88bcc7b6fbb01ed919262dcbfc"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7593a4278905c33981d8ae1d88542511"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="37e865387910dcd872c2c5bcf9bbf69a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Images</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="a66c1cba5d79a09e8effd557792cc027"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Build an image locally from a Dockerfile</p>
+
+<pre><span style="font-size:16px">docker build -t docker.io:openjdk-7-jre .</span>
+</pre>
+
+<p>Search for an image</p>
+
+<pre><span style="font-size:16px">docker search java</span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Pull the image from a registry</span></p>
+
+<pre style="color:rgb(102, 102, 102)"><span style="font-size:16px">docker pull docker.io/java</span>
+</pre>
+
+<p>List the images </p>
+
+<pre><span style="font-size:16px">docker images</span>
+</pre>
+
+<p>Remove an image</p>
+
+<pre><span style="font-size:16px">docker rmi docker.io/java</span></pre>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="56af9396e9c80596ef85e166f7b0ed50"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="93d4ed93ea735a952189b74c31463abd"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="aca7225df4c213363228136be0c1b3ad"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Containers</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="139609119ac4e582b71b168312db985a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>Run a container based on an image</p>
+
+<pre><span style="font-size:16px">~ ❯ docker run -it --rm docker.io/java:latest java -version
+java version "1.7.0_79"
+OpenJDK Runtime Environment (IcedTea 2.5.5) (7u79-2.5.5-1~deb8u1)
+OpenJDK 64-Bit Server VM (build 24.79-b02, mixed mode)</span> </pre>
+
+<p><span style="color:rgb(102, 102, 102)">Docker run reference:</span></p>
+
+<ul>
+	<li><a href="https://docs.docker.com/reference/run/" target="_blank"><span style="font-size:16px">https://docs.docker.com/reference/run/</span></a></li>
+</ul>
+
+<p>Executing against running container</p>
+
+<pre><span style="font-size:16px">~ ❯ docker run -it -d --name java_container docker.io/java:latest
+54883df93db1e6c018217210a7ff5f94d5684113317bab445ccfcb06617ca932
+~ ❯ docker exec java_container java -version
+java version "1.7.0_79"
+OpenJDK Runtime Environment (IcedTea 2.5.5) (7u79-2.5.5-1~deb8u1)
+OpenJDK 64-Bit Server VM (build 24.79-b02, mixed mode)</span>​</pre>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="31ec8fa83eb0c8ce5eb36fb742dc56ad"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="1669183b1a7ba67a5d549c341486cdec"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="c8b868d751d08e2b8405bb3f58075c8d"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">Containers</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="4a1ecb77095da028c1feb61ecfe38651"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>List containers</p>
+
+<pre><span style="font-size:16px"><span>docker ps</span></span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Stop container</span></p>
+
+<pre><span style="font-size:16px"><span>docker stop &lt;container&gt;</span></span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Start container</span></p>
+
+<pre><span style="font-size:16px">docker start &lt;container&gt;</span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Show STDOUT of container</span></p>
+
+<pre><span style="font-size:16px"><span style="line-height:20px">docker logs &lt;container&gt;</span></span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Remove container</span></p>
+
+<pre><span style="font-size:16px"><span>docker rm &lt;container&gt;</span></span></pre>
+
+<p><span style="color:rgb(102, 102, 102)">Docker CLI reference:</span></p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://docs.docker.com/reference/commandline/cli/" target="_blank">https://docs.docker.com/reference/commandline/cli/</a></span></li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="a95ff000e839e7a97d386e22632fc048"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="6567e103c8ab3b31c8f9d7bc271c5340"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="bb62ef5f1811649071d0d8842ba5265a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><font size="7"><span style="line-height:62px">Processes</span></font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="4906d24808d0fed7e250ba2c49f526e7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p>A container is responsible for starting one process, and once that process exits, the container exits.</p>
+
+<ul>
+	<li>Container will be in the exit state, it will not be removed and still exists on disk (no data loss)</li>
+</ul>
+
+<p> </p>
+
+<p>There is no init system that starts up multiple services like you are traditionally used to on VMs</p>
+
+<p> </p>
+
+<p>When you require multiple processes in a container, you really should ask yourself why?</p>
+
+<ul>
+	<li>Is the container serving multiple roles / jobs?  Split them up into separate containers</li>
+	<li>Dockerizing legacy applications sometimes require it </li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="633cfcbf0d8a653895dd5bc9c97260a5"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="11cdf0c33cd0104b0c8262998cc0ac9e"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="473088b6df15587435f08c155a9cad82"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p><font size="7"><span style="line-height:62px">Processes</span></font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="9aa626ee02d6ef2d32a384a37f8e9229"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p style="color:rgb(102, 102, 102)">To have multiple processes running in the container</p>
+
+<ul style="color:rgb(102, 102, 102)">
+	<li>Chain commands
+	<ul>
+		<li>Nice for quick solution but not usually suitable longterm </li>
+	</ul>
+	</li>
+	<li>Use supervisord or similar service management process
+	<ul>
+		<li>Preferred way and allows future flexibility</li>
+	</ul>
+	</li>
+</ul>
+
+<p>Chaining</p>
+
+<pre><span style="font-size:16px">~ ❯ docker run -it --rm  docker.io/java:latest echo hello &amp;&amp; java -version
+hello
+java version "1.7.0_79"</span>​</pre>
+
+<p>Supervisord</p>
+
+<pre><span style="font-size:16px"># Dockerfile definition
+CMD ["/usr/bin/supervisord", "--configuration", "/etc/supervisord_infinidb.conf"]</span>​</pre>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="cd82905824cf727e1a589c97e7491aca"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="e976c8d55fb2a81bf46ae6feb64ebdcd"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="40b78cb96861b7c7b13e63f4a285cd0b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui"><p><span style="font-size:48px">Ports and Linking</span></p></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="d54f75bddfca8eb61b971b1103ad5592"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p style="color:rgb(102, 102, 102)">Ports inside the container can be punched through the hosts</p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)">EXPOSE keyword in Dockerfile</li>
+	<li style="color:rgb(102, 102, 102)">--publish or --expose argument for docker run</li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Linking will inject environment variables and update the /etc/hosts of the container</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://docs.docker.com/userguide/dockerlinks/" target="_blank">https://docs.docker.com/userguide/dockerlinks/​</a></span></li>
+</ul>
+
+<p>Allows containers to dynamically find each other</p>
+
+<ul>
+	<li>Should not rely on static port mappings, that forces constraints on what can run on the host</li>
+</ul>
+
+<p> </p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="dbf918a6a915320892cebb8ea850644b"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="ab080559c0c295dac8514375f36bf545"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="b23a368cea1cdd96e73390016e47ab23"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Volumes</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="5e7f2c67e8501720ce5e87173303ba81"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p style="color:rgb(102, 102, 102)">Data for containers can be managed by using volumes</p>
+
+<ul>
+	<li style="color: rgb(102, 102, 102);"><span style="font-size:16px"><a href="https://docs.docker.com/userguide/dockervolumes/" target="_blank">https://docs.docker.com/userguide/dockervolumes/​</a></span></li>
+</ul>
+
+<p style="color: rgb(102, 102, 102);"><span style="color:rgb(102, 102, 102)">Volumes are basically bind mounts to directories on the host machine</span></p>
+
+<ul>
+	<li style="color: rgb(102, 102, 102);">Persists even if container is deleted</li>
+	<li style="color: rgb(102, 102, 102);">Useful for sharing resources 
+	<ul>
+		<li style="color: rgb(102, 102, 102);">Access datasets available on the host</li>
+		<li style="color: rgb(102, 102, 102);">Mount the source of a project to build inside a container</li>
+	</ul>
+	</li>
+</ul>
+
+<p style="color: rgb(102, 102, 102);">Container can be made to provide access to a volume</p>
+
+<ul>
+	<li style="color: rgb(102, 102, 102);">Data Volume Container</li>
+	<li style="color: rgb(102, 102, 102);">Containers can inherit the volumes using the --volumes-from argument to docker run</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="ca91aa3faf5491539534277ca47435eb"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7ad8b5606ccf1b507457845e4136db12"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="d50840c3686873649ad83335ae17b7d9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Advance Usage</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="c795ef2f36fe83edfa99fe21eae6f4fd"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p style="color:rgb(102, 102, 102)">Swarm</p>
+
+<ul>
+	<li>Native clustering containers </li>
+	<li style="color:rgb(102, 102, 102)"><span style="font-size:16px"><a href="https://docs.docker.com/swarm/" target="_blank">https://docs.docker.com/swarm/</a></span></li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Compose</p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)"><span style="color:rgb(102, 102, 102)">Complex definition of applications with multi-container groups</span></li>
+	<li style="color:rgb(102, 102, 102)"><span style="font-size:16px"><a href="https://docs.docker.com/compose/" target="_blank">https://docs.docker.com/compose/​​</a></span></li>
+</ul>
+
+<p>Service Discovery</p>
+
+<ul>
+	<li>zookeeper, doozer, eureka, serf, consul, etcd</li>
+	<li><a href="http://blog.scottlowe.org/2015/03/06/running-own-docker-swarm-cluster/" target="_blank"><span style="font-size:16px">http://blog.scottlowe.org/2015/03/06/running-own-docker-swarm-cluster/</span></a></li>
+</ul>
+
+<p>Container Services</p>
+
+<ul>
+	<li>AWS EC2 Container, Google Container Engine, Microsoft Nano Server and plenty of others</li>
+</ul>
+
+<p> </p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 707px;" data-block-id="70a975ae860e92414e1e9487a4812bc8"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="b0d6acfa3607d279025afc1604d204f9"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="d322f3566edccc5a44f3a3d104676c7e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Future</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 93px;" data-block-id="f42899040869d52ac1bfda8fd370cb9e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p style="color:rgb(102, 102, 102)">Dockercon 2015</p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)"><span style="font-size:16px"><a href="http://www.dockercon.com" target="_blank">http://www.dockercon.com​</a></span></li>
+	<li style="color:rgb(102, 102, 102)">June 22-23</li>
+	<li style="color:rgb(102, 102, 102)">Expect announcements of upcoming releases and further maturity of recent initiatives such as Swarm, Compose, etc...</li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Ecosystem is rapidly evolving </p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)">Orchestration</li>
+	<li style="color:rgb(102, 102, 102)">Scheduling</li>
+	<li style="color:rgb(102, 102, 102)">Management</li>
+	<li style="color:rgb(102, 102, 102)">Security</li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)">Everyone wants their piece</p>
+
+<ul>
+	<li style="color:rgb(102, 102, 102)">Google, Amazon, CoreOS, Redhat, Microsoft, and pretty much every player in platform / infrastructure services</li>
+</ul>
+
+<p style="color:rgb(102, 102, 102)"> </p>
+
+<p> </p>
+</div></div></section></section><section class="stack"><section data-background-size="cover" data-background-image="javamug-docker/1475485-background-3.png"><div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 418px;" data-block-id="2b1e02648e33c278fc40931e2415c5b6"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 11; color: rgb(89, 89, 89); text-align: center;" dir="ui">
+<p><span style="font-size:56px">Docker in the Wild</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 490px;" data-block-id="0a89a5be393d6a6a9bfbfb77437e512f"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(21, 126, 251); text-align: center;" dir="ui">
+<p><span>Usage of Docker with projects at TUNE and the best practices learned during development</span></p>
+</div></div>
+</section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="9735b12c35aa73c112fc90407314d676"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="d7b89aee5e7b16167bcb983cd2469a60"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="921014bead09ad265bfdbf72e4f22b79"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;">
+<p><span style="font-size:48px">TUNE Projects</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="9f64afbe10f208d0c9e1e27bb21b6abe"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>Several initiatives to integrate Docker into our DevOps </p>
+
+<p>Registry Rubber</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://developers.mobileapptracking.com/dockersecurity/" target="_blank">http://developers.mobileapptracking.com/dockersecurity/</a></span></li>
+	<li>Support dynamic security credentials for Docker registry</li>
+	<li>Registry 2.0 alleviates this security concern</li>
+</ul>
+
+<p>​Freight Forwarder</p>
+
+<ul>
+	<li>Utility that organizes the transportation and distribution of cargo from the developer to their applications consumers.</li>
+	<li>Allows our developers to focus on features and Freight Forward be the expert in continuous integration and delivery.</li>
+</ul>
+
+<p>CIA</p>
+
+<ul>
+	<li>Configuration management and injection</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="2fef5e0bfa1c23ac0743f7a31319492f"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7fe3120b256ee216916481aa273e8dcf"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="d6a4388b2c5d705c915e42b45df2db7e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Dockerizing Applications</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="f5cc2310e2c189fab91119a383fbc93e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>As we evolve our infrastructure to support Docker, we have also been going through the services of our products and dockerizing them</p>
+
+<p> </p>
+
+<p>Dockerizing is the process of converting an application to run inside a container</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://docs.docker.com/userguide/dockerizing/" target="_blank">https://docs.docker.com/userguide/dockerizing/</a></span></li>
+</ul>
+
+<p> </p>
+
+<p>InfiniDB is one of the applications we dockerized and we open sourced the implantation and guides</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://developers.mobileapptracking.com/infinidb-deployments-in-ec2-and-docker-with-ansible/" target="_blank">http://developers.mobileapptracking.com/infinidb-deployments-in-ec2-and-docker-with-ansible/</a></span></li>
+</ul>
+
+<p> </p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="6055800dcdb3216f73ea9175e32f08ac"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="9d562f14e371a92d8a4606352441b72d"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="4d5da398b8d8bc1ce3d0f6cdb274e566"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Dockerizing InfiniDB</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="79b96f766b20ca5b520c938e2624653a"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>InfiniDB is an open source massively parallel processing (MPP) columnar database engine that is accessed through a MySQL interface.</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://github.com/infinidb/infinidb" target="_blank">https://github.com/infinidb/infinidb</a></span></li>
+</ul>
+
+<p>Detailed walkthrough of using InfiniDB with Docker</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="https://github.com/TuneOSS/InfiniDB-Tools/wiki/InfiniDB-Docker-Walkthrough" target="_blank">https://github.com/TuneOSS/InfiniDB-Tools/wiki/InfiniDB-Docker-Walkthrough​</a></span></li>
+	<li>Goes over the usage of Docker with data containers and the use cases that are possible</li>
+	<li>Novices should be able to pick up  </li>
+	<li>Needs to be updated to Docker 1.6 syntax
+	<ul>
+		<li>I am working on it :)</li>
+	</ul>
+	</li>
+</ul>
+
+<p> </p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="65cd1d24d083ab79ac02c1f67762a2aa"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="7868ca64cb75962066ea801c6a03a967"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="a5c14d4096c17bf11bd393d9cefa98ae"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Ansible</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="d580005189adb435636a5b9530f9c05e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p>By utilizing Ansible, we were able to leverage the same provisioning we use for our EC2 environments to be done inside a Docker container</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://www.ansible.com/home" target="_blank">http://www.ansible.com/</a></span></li>
+</ul>
+
+<p> </p>
+</div></div>
+<div class="sl-block" data-block-type="image" style="min-width: 30px; min-height: 30px; width: 640px; height: 326.9621273166801px; left: 160px; top: 311.5189363416599px;" data-block-id="4526e58d875d9788bbe40ddf35d329d7"><div class="sl-block-content" style="z-index: 15;"><img style="" data-natural-width="1241" data-natural-height="634" data-src="javamug-docker/1478785-infographic_infinidb_ansible_new.png"></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="c16227c309366b01785af2ab9a67b9c2"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="bf6f32ea693b3962f28293d400385b4b"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="6fa6a5d252a63d801b954dada2ce565b"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Ansible</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="a3b347bee4950be5cbb5051ed58e47ed"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p>Using Ansible or your flavor of provisioning tool also keeps the Dockerfile clean of application logic</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 794px; height: 341px; left: 80px; top: 210px;" data-block-id="2b9b2614c67d5aaebdbf97bd512c1959"><div class="sl-block-content" style="z-index: 15;"><pre><code>FROM infinidb:base
+MAINTAINER Michael Hoglan &lt;michaelh@tune.com&gt;
+
+# Provide the playbook vars for this image
+COPY playbook_vars.yml /opt/tune/playbooks/vars/
+
+WORKDIR /opt/tune/playbooks/
+
+# Perform InfiniDB installation
+# Cleanup yum which playbook may have used
+# Stop the service (installation auto starts it) 
+RUN ansible-playbook -i localhost_launched docker_infinidb.yml -e "@vars/playbook_vars.yml" --connection=local &amp;&amp; service infinidb stop &amp;&amp; yum clean all
+
+EXPOSE 3306
+CMD ["/usr/bin/supervisord", "--configuration", "/etc/supervisord_infinidb.conf"]</code></pre></div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="85fe2c01087a124eb917cd662961a633"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="43c3b8c5f3c2693dd6adf3772b18d901"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="1bb1404a2e1d608247894c42579afe56"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Supervisord</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="c5f24df94335786f67a0ab36bb7a9cc9"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p>InfiniDB uses an init.d script for service actions</p>
+
+<ul>
+	<li>Most init.d scripts are not blocking and are not signal aware.</li>
+</ul>
+
+<p>Instead of using the service script and chaining a blocking command to the docker run, use supervisord</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://supervisord.org/" target="_blank">http://supervisord.org/</a></span></li>
+	<li><span style="font-size:16px"><a href="https://docs.docker.com/articles/using_supervisord/" target="_blank">https://docs.docker.com/articles/using_supervisord/</a></span></li>
+</ul>
+
+<p>Existing scripts can be wrapped in a bash script which is blocking and signal aware</p>
+
+<ul>
+	<li>Allows using the service with supervisord without refactoring</li>
+	<li><span style="font-size:16px"><a href="https://github.com/TuneOSS/InfiniDB-Tools/blob/master/playbooks/roles/infinidb_supervisor/templates/infinidb.sh.j2" target="_blank">https://github.com/TuneOSS/InfiniDB-Tools/blob/master/playbooks/roles/infinidb_supervisor/templates/infinidb.sh.j2</a></span></li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="6302ba56f43fb2e7b0f08719d3aa9060"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="f161263737067c1532102a9db7821341"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="2fb0373636e33b292d7e8b4fad20472e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><font size="7">Building <span style="line-height:62px">with</span> Docker</font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="0d4ab7476b09a78c72502bda8e56a9f3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>Changing your build environment to be container based is one of the quickest ways to get into Docker</p>
+
+<ul>
+	<li>Build servers become generic resource pools</li>
+</ul>
+
+<p>No longer need to keep separate build servers with different environments to build specific projects</p>
+
+<ul>
+	<li>Build needs are encapsulated in the container</li>
+	<li>Pushes the responsibility to the developer
+	<ul>
+		<li>They are the best resource for the application</li>
+		<li>Promotes being a full stack engineer</li>
+	</ul>
+	</li>
+</ul>
+
+<p>DevOps and SCM focus on their primary tasks, providing infrastructure to publish products and supporting production environments.</p>
+
+<p> </p>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="62c70ae5b05267885a93506bd8229095"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="f000bdf2b44a26d0c8734a946c9b9a77"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="bd1146d1c6d46984596e29656d6608a7"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><font size="7">Building <span style="line-height:62px">with</span> Docker</font></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 102px;" data-block-id="7bdf93ede408c8340ffa24ef3c4f1777"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p>Utilize a Makefile or any other build script utility to encapsulate the docker commands </p>
+
+<pre><span style="font-size:16px">make build release rpm</span></pre>
+
+<p>Example of building a golang project inside a Docker container and copying the resultant artifact to the host</p>
+
+<pre><span style="font-size:16px">docker run --rm --entrypoint /bin/sh \ 
+   -v /root/telemetry-go:/go/src/github.com/TuneDB/telemetry-go \ 
+   -v /root/telemetry-go/target:/export \
+   -w /go/src/github.com/TuneDB/telemetry-go golang:latest \
+   -c "make go-install &amp;&amp; cp /go/bin/receiver /export &amp;&amp; make build-tar"</span></pre>
+
+<p>Recursively uses the Makefile of the project to execute inside the Docker container</p>
+
+<ul>
+	<li>Allows developers to use the other Makefile targets directly</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="13bdfbbc493ca45c34d84149244f53f3"><div class="sl-block-content" style="z-index: 10;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="c99e1811b195dc0786ad3e468c811692"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 11;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="228e62c464589dced790ed07bc2585b3"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Packaging into Docker Image</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="c958ac26da8931ff4e79f975735085a5"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;">
+<p>Artifacts of builds can also be packaged up into a Docker image to be deployed.</p>
+
+<ul>
+	<li>Works great when the artifact is an executable (such as a JAR or golang binary) that can be the long running process of a container</li>
+</ul>
+
+<p>Package artifacts into minimal containers such as the scratch container</p>
+
+<ul>
+	<li>Keeps the resultant image size small</li>
+	<li>Useful for when shipping containers to different hosts that may not have the base image layer used by the container<br>
+	 
+	<pre style="color:rgb(51, 51, 51); font-size:13.6000003814697px">REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+receiver            release             4ff41c73b491        6 minutes ago       7.373 MB
+receiver            build               54efdeb85385        9 minutes ago       559.6 MB</pre>
+	</li>
+</ul>
+</div></div></section><section><div class="sl-block" data-block-type="image" style="width: 960px; height: 39.1713747645951px; left: 0px; top: 661px;" data-block-id="41f4054936bf35bad09b93ee19e37cd5"><div class="sl-block-content" style="z-index: 11;"><img data-natural-width="1593" data-natural-height="65" style="" data-src="javamug-docker/1475176-footer.png"></div></div>
+<div class="sl-block" data-block-type="shape" style="width: 800px; height: 4px; left: 80px; top: 66px;" data-block-id="2bc6bcf0d9141485d534cbbcc4768fba"><div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgb(55, 107, 251)" data-shape-stretch="true" style="z-index: 12;"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveaspectratio="none" viewbox="0 0 800 4"><rect width="800" height="4" class="shape-element" fill="rgb(55, 107, 251)"></rect></svg></div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 8px;" data-block-id="d979c25b98c5fbf33e2ca29157099054"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 13; color: rgb(102, 102, 102); text-align: left;" dir="ui">
+<p><span style="font-size:48px">Minimal Docker Release Images</span></p>
+</div></div>
+<div class="sl-block" data-block-type="text" style="height: auto; width: 800px; left: 80px; top: 101px;" data-block-id="a488828947ffdf5a5905697ee3b01ef4"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 14; color: rgb(102, 102, 102); text-align: left;">
+<p>Based our work on the thoughts from this blog post</p>
+
+<ul>
+	<li><span style="font-size:16px"><a href="http://blog.charmes.net/2014/11/release-go-code-and-others-via-docker.html" target="_blank">http://blog.charmes.net/2014/11/release-go-code-and-others-via-docker.html</a></span></li>
+</ul>
+
+<p> </p>
+
+<p>Our Makefile has a build-tar target which packages up the binary and /etc/ssl from the build container into a tar</p>
+
+<ul>
+	<li>/etc/ssl is needed for Linux TLS, easiest to bring with binary</li>
+</ul>
+
+<p> </p>
+
+<p>Dockerfile for the release image</p>
+</div></div>
+<div class="sl-block" data-block-type="code" style="min-width: 30px; min-height: 30px; width: 800px; height: 140px; left: 80px; top: 429px;" data-block-id="e51a6e36d45561e0ae2c51f6565bdec6"><div class="sl-block-content" style="z-index: 15;"><pre class="bash"><code>FROM scratch
+MAINTAINER Michael Hoglan michaelh@tune.com
+
+ADD ./target/receiver.tar /
+
+ENTRYPOINT ["/go/bin/receiver"]</code></pre></div></div></section></section>
+			</div>
+		</div>
+
+		<script>
+			var SLConfig = {"deck": {"id":435210,"slug":"javamug-docker","title":"Java MUG - Docker Presentation","description":"Docker Presentation for Java MUG","visibility":"self","published_at":null,"sanitize_messages":null,"thumbnail_url":"https://s3.amazonaws.com/media-p.slid.es/thumbnails/secure/58d9e2/decks.jpg","view_count":0,"user":{"id":160726,"username":"mhoglan","name":"Michael Hoglan","description":"","thumbnail_url":"https://lh3.googleusercontent.com/-XdUIqdMkCWA/AAAAAAAAAAI/AAAAAAAAAAA/4252rscbv5M/photo.jpg","pro":true,"enterprise":false,"enterprise_manager":false,"settings":{"id":172308,"present_controls":true,"present_upsizing":true},"registered":true},"background_transition":"fade","transition":"none","theme_id":null,"theme_font":"opensans","theme_color":"white-blue","auto_slide_interval":0,"comments_enabled":true,"forking_enabled":false,"rolling_links":false,"center":false,"should_loop":false,"rtl":false,"version":2,"notes":{}}};
+			SLConfig.current_user = {
+				name: "Michael Hoglan",
+				username: "mhoglan",
+				pro: true
+			};
+		</script>
+
+		<script src="lib/head.min.js"></script>
+		<script src="lib/reveal.min.js"></script>
+		<script>
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				mouseWheel: false,
+
+				autoSlide: SLConfig.deck.auto_slide_interval || 0,
+				autoSlideStoppable: true,
+
+				rolling_links: SLConfig.deck.rolling_links || true,
+				center: SLConfig.deck.center || false,
+				loop: SLConfig.deck.should_loop || false,
+				rtl: SLConfig.deck.rtl || false,
+
+				transition: SLConfig.deck.transition,
+				backgroundTransition: SLConfig.deck.background_transition,
+
+				dependencies: [
+					{ src: 'lib/reveal-plugins/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'lib/reveal-plugins/highlight/highlight.js', async: true, callback: function() { hljs.initHighlighting(); hljs.initHighlightingOnLoad(); } },
+					{ src: 'lib/reveal-plugins/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			// Make Slides speaker notes available in the reveal.js speaker view
+			if( SLConfig.deck.notes ) {
+				[].forEach.call( document.querySelectorAll( '.reveal .slides section' ), function( slide ) {
+
+					var value = SLConfig.deck.notes[ slide.getAttribute( 'data-id' ) ];
+					if( value && typeof value === 'string' ) {
+						slide.setAttribute( 'data-notes', value );
+					}
+
+				} );
+			}
+		</script>
+
+		
+
+	</body>
+</html>
